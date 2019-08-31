@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DeviseTokenAuth
-  class ApplicationController < DeviseController
+  class ApplicationController < DeviseTokenAuth.parent_controller.constantize
     include DeviseTokenAuth::Concerns::SetUserByToken
 
     def resource_data(opts = {})
